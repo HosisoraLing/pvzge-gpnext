@@ -1,0 +1,22 @@
+services:
+  gpnext-web:
+    image: nginx:alpine
+    container_name: pvzge-gpnext
+    restart: unless-stopped
+    ports:
+      - "8096:80"
+    volumes:
+      - ./docs-0160:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - cloud-save
+  cloud-save:
+    image: node:22-alpine
+    container_name: pvzge-gpnext-cloud
+    restart: unless-stopped
+    command: ["node", "/app/cloud-server.mjs"]
+    volumes:
+      - ./cloud-server.mjs:/app/cloud-server.mjs:ro
+      - cloud-saves:/data
+volumes:
+  cloud-saves:

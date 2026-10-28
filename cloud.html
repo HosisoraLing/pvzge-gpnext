@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'">
+  <title>云存档 · PvZ2 Gardendless</title>
+  <script src="/tauri-shim.js?v=20261028-4" defer></script>
+</head>
+<body>
+  <main id="web-cloud-page">
+    <h1>云存档</h1>
+    <p>输入同一个 6 位数字码，在不同设备同步游戏进度。请自行记住此码。</p>
+    <form id="web-cloud-form">
+      <label for="web-cloud-code">6 位数字码</label>
+      <input id="web-cloud-code" type="text" inputmode="numeric" pattern="[0-9]{6}" minlength="6" maxlength="6" autocomplete="off" required>
+      <button type="submit">进入云存档</button>
+    </form>
+    <p id="web-cloud-status" role="status" aria-live="polite"></p>
+    <p id="web-cloud-notice"></p>
+    <p>首次接入已有云存档会下载云端进度；之后冲突使用写入时间较新的整份存档。替换前保留一份本地备份。</p>
+    <p>进入云存档后，会在关卡完成、奖励结算、退出花园、购买成功及离开页面时自动保存并同步；进入或切回游戏、恢复联网时自动检查云端更新，无需点击同步。平时只保存本地，不持续联网同步。断网时照常本地游玩，联网后自动重试。仅同步玩家进度与游戏设置，模组仍留在本设备。</p>
+    <p>知道数字码的人都能读取或覆盖存档，请勿把码公开。</p>
+    <button id="web-cloud-sync" type="button">立即同步</button>
+    <button id="web-cloud-backup" type="button">下载替换前备份</button>
+    <button id="web-cloud-disconnect" type="button">退出云存档（保留本地进度）</button>
+    <p><a href="https://github.com/HosisoraLing/pvzge-gpnext" target="_blank" rel="noopener noreferrer">查看源代码（AGPL-3.0）</a></p>
+    <p><a href="/">返回游戏</a></p>
+  </main>
+</body>
+</html>

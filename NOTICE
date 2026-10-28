@@ -1,0 +1,15 @@
+上游来源：Gzh0821/pvzge_web
+上游地址：https://github.com/Gzh0821/pvzge_web
+本次分叉基线：462f1161d5a29423409002936f2e05f1c24ac630
+
+上游原有代码继续保留 Apache License 2.0 及原有版权、署名和第三方许可声明。
+原许可证全文保存在 LICENSES/Apache-2.0.txt。
+
+本项目新增的 tauri-shim.js、cloud-server.mjs、cloud.html、docker-compose.yml、
+nginx.conf，以及 docs-0160/ 中的浏览器适配修改，采用 AGPL-3.0-only。
+主要修改包括：浏览器桌面接口适配、Android 触摸与全屏、同源云存档服务、
+运行中读取云档，以及通关、花园退出和购买后的节点保存与同步。
+修改日期：2026-10-28。
+
+第三方引擎、字体、美术、音频及其他资源保留各自的权利与许可。
+本仓库的 AGPL-3.0-only 声明不覆盖这些独立第三方资源的原有许可。

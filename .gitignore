@@ -1,2 +1,18 @@
+# 上游忽略项
 /.vscode
 .web-lite-build/
+
+# 提取资源只留在部署主机，保留三个浏览器入口
+/docs-*/**
+!/docs-0160/index.html
+!/docs-0160/tauri-shim.js
+!/docs-0160/cloud.html
+
+# 本项目的测试、浏览器资料、截图、日志与回滚文件仅留本地
+/.playwright-cli/
+/output/
+/test-cloud.mjs
+/test-*.mjs
+.env
+.env.*
+node_modules/
